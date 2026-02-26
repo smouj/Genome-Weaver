@@ -4,21 +4,33 @@
   <img src="https://img.shields.io/badge/Skill-Genome%20Weaver-111827?style=for-the-badge&logo=github" alt="Genome Weaver badge" />
 </p>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Status-Initiating-22d3ee?style=flat-square" alt="status" />
-  <img src="https://img.shields.io/badge/Dificultad-Alta-8b5cf6?style=flat-square" alt="dificultad" />
-</p>
+## Overview
+Motor evolutivo que genera variantes de skills, ejecuta pruebas A/B, mide desempeño y selecciona la configuración más efectiva según métricas de éxito, coste y latencia.
 
-## Purpose
-Evolución darwiniana: genera, prueba y selecciona variantes de skills.
+## Why this skill matters
+- Reduce operational friction with reusable agent logic.
+- Provide deterministic, auditable behavior.
+- Keep execution local-first and security-aware.
+
+## Quick Start
+```bash
+# clone
+
+git clone https://github.com/smouj/Genome-Weaver.git
+cd Genome-Weaver
+
+# open docs
+cat SKILL.md
+```
 
 ## Status
 Initiating
 
-## Dificultad
+## Difficulty
 Alta
 
-## Próximos pasos
-- Crear SKILL.md con formato OpenClaw estándar
-- Implementar la lógica principal
-- Testear en agente local
+## Roadmap
+- [ ] Finalize SKILL.md behavior contract
+- [ ] Implement core logic (v0)
+- [ ] Add test fixtures
+- [ ] Publish first stable tag
