@@ -1,0 +1,30 @@
+name: docs-quality
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: required files
+        run: |
+          set -euo pipefail
+          test -f README.md
+          test -f README.es.md
+          test -f SKILL.md
+          test -f SKILL.es.md
+          test -f ARCHITECTURE.md
+          test -f USE_CASES.md
+          test -f LIMITS.md
+      - name: link check (basic)
+        run: |
+          set -euo pipefail
+          grep -RhoE 'https?://[^)" ]+' README.md README.es.md SKILL.md SKILL.es.md ARCHITECTURE.md USE_CASES.md LIMITS.md | sed 's/[>,]$//' | sort -u > links.txt || true
+          while read -r u; do
+            [ -z "$u" ] && continue
+            curl -fsSL --max-time 15 "$u" >/dev/null || echo "warn link: $u"
+          done < links.txt
