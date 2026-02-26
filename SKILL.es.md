@@ -2,7 +2,7 @@
 name: genome-weaver
 description: >
   Genome Weaver skill for evolution operations in multi-agent ecosystems. Use when tasks require evolution analysis, automation, and safe execution workflows.
-version: "1.0.0"
+version: "1.0.1"
 tags: [evolution, ai-agents, openclaw]
 metadata:
   author: smouj
