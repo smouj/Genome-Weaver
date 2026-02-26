@@ -9,42 +9,31 @@
   <a href="./README.es.md"><img src="https://img.shields.io/badge/README-Español-c92a2a?style=for-the-badge" alt="Español"></a>
 </p>
 
-<p align="center"><em>🧬 Evolución darwiniana de skills.</em></p>
-
----
-
 ## Overview
-Motor evolutivo que genera variantes de skills, ejecuta pruebas A/B, mide desempeño y selecciona la configuración más efectiva según éxito, coste y latencia.
+Darwinian skill evolution with variant generation, benchmark and selection.
 
-## Architecture of understanding
-```mermaid
-flowchart LR
-  A[Input goal] --> B[Scope check]
-  B --> C[Plan minimal steps]
-  C --> D[Execute safely]
-  D --> E[Verify outcomes]
-  E --> F[Report + next steps]
-```
+## Purpose
+Evolución darwiniana de skills: genera variantes paralelas, las prueba en shadow mode (low-compute), selecciona la mejor basada en métricas reales (éxito, tiempo, costo tokens).
 
 ## Installation
 ```bash
 git clone https://github.com/smouj/Genome-Weaver.git
 cd Genome-Weaver
-# read the contract
 cat SKILL.md
 ```
 
-## Quick usage
-```bash
-# Example placeholder command
-printf "running genome-weaver...\n"
+## Architecture (understanding)
+```mermaid
+flowchart LR
+  A[Input] --> B[Validate scope]
+  B --> C[Plan safe steps]
+  C --> D[Execute]
+  D --> E[Verify]
+  E --> F[Report]
 ```
 
-## Badges
-- Status: Initiating
-- Difficulty: Alta
+## Status
+Initiating
 
-## Roadmap
-- [ ] Implement core logic v0
-- [ ] Add integration tests
-- [ ] Publish stable tag v1.0.0
+## Difficulty
+Alta
