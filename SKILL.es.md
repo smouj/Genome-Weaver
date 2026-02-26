@@ -1,58 +1,45 @@
 ---
-name: genome-weaver
-description: "🧬 Evolución darwiniana de skills."
+name: Genome Weaver
+description: "🧬 Darwinian skill evolution with variant generation, benchmark and selection."
+when: "When a user request matches genome-weaver capabilities or requires this domain-specific workflow."
+examples:
+  - "Run Genome Weaver for this task"
+  - "Apply Genome Weaver to solve this workflow"
 metadata:
-  {
-    "openclaw": {
-      "emoji": "🧬",
-      "version": "0.2.0",
-      "author": "smouj",
-      "lang_default": "en"
-    }
-  }
+  openclaw:
+    requires: ["fs_read", "fs_write", "shell_exec", "memory_search"]
+  safety_level: high
+  version: "1.0.0"
+  author: "smouj"
+  tags: ["genome-weaver", "automation", "openclaw-skill"]
 ---
 
 # 🧬 Genome Weaver
 
 ## Propósito
-Motor evolutivo que genera variantes de skills, ejecuta pruebas A/B, mide desempeño y selecciona la configuración más efectiva según éxito, coste y latencia.
+Evolución darwiniana de skills: genera variantes paralelas, las prueba en shadow mode (low-compute), selecciona la mejor basada en métricas reales (éxito, tiempo, costo tokens).
 
-## Tags
-- security
-- reliability
-- automation
-- openclaw-skill
+## Cómo usar / Instrucciones núcleo
+1. Primero piensa en alcance, riesgo y coste.
+2. Luego valida inputs y dependencias mínimas.
+3. Ejecuta en pasos pequeños y reversibles.
+4. Verifica resultado con checks explícitos.
+5. Si hay error, falla seguro y reporta causa + próximo paso.
 
-## Contrato de ejecución
-1. Validar solicitud y restricciones.
-2. Generar plan mínimo seguro.
-3. Ejecutar en pasos reversibles.
-4. Verificar con checks explícitos.
-5. Resumir resultado + siguientes acciones.
+## Security & Safety Guidelines
+Nunca ejecutes código sospechoso sin sandbox. Reporta riesgos al usuario. No envíes datos sensibles fuera del entorno local.
 
-## Inputs esperados
-- Objetivo
-- Restricciones (tiempo/coste/privacidad)
-- Archivos/URLs opcionales
+## Herramientas requeridas
+- fs_read
+- fs_write
+- shell_exec
+- memory_search
 
-## Outputs
-- Plan
-- Acciones ejecutadas
-- Verificación
-- Notas de rollback
+## Flujos de ejemplo
+- Entrada -> validación -> plan -> ejecución -> verificación -> reporte.
+- Reintento controlado con rollback si falla.
 
-## Guardrails
-- Nunca exponer secretos.
-- Sin acciones destructivas sin confirmación explícita.
-- Fallar de forma segura con diagnóstico accionable.
-
-## Comandos
-```bash
-printf "genome-weaver: validar -> ejecutar -> verificar\n"
-```
-
-## Checklist de test
-- [ ] Happy path
-- [ ] Manejo de errores
-- [ ] Idempotencia
-- [ ] Guardrails respetados
+## Casos límite y manejo de errores
+- Input incompleto: pedir datos mínimos.
+- Dependencia ausente: degradar en modo seguro.
+- Error persistente: detener, registrar y escalar.
